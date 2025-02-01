@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Portal</title>
+  <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">Blue Gulf International School</div>
+    <nav>
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Messages</a></li>
+        <li><a href="#">Profile</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Login Form in Header -->
+    <div class="login-form">
+      <form id="loginForm">
+        <input type="text" id="username" name="username" placeholder="Username">
+        <input type="password" id="password" name="password" placeholder="Password">
+        <input type="submit" value="Login">
+      </form>
+      <p id="error-message" style="color: red;"></p>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <div class="banner">
+    <img src="gulf.png" alt="Gulf Banner">
+  </div>
+
+  <!-- Newsbar -->
+  <div class="newsbar">
+    <marquee behavior="scroll" direction="left">This is the news bar scrolling text.</marquee>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </aside>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      var users = {
+        "Ahmed Ibrahim": "password123",
+        "Ali Mohammed": "password456"
+      };
+
+      if (users[username] === password) {
+        alert("Welcome, " + username + "!");
+        document.getElementById("error-message").textContent = "";
+        window.location.href = "profile.html";
+      } else {
+        document.getElementById("error-message").textContent = "Invalid username or password";
+      }
+    });
+  </script>
+</body>
+</html>

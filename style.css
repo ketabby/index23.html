@@ -1,0 +1,18 @@
+/* Banner */
+.banner {
+  width: 1058px; /* 28 cm */
+  height: 756px; /* 20 cm */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevents any overflow */
+  background-color: white;
+  margin: 10px auto; /* Centers the banner */
+}
+
+/* Ensure the image fully fits the banner */
+.banner img {
+  width: 100%;  /* Stretch across full width */
+  height: 100%; /* Stretch across full height */
+  object-fit: cover; /* Ensures full coverage without distortion */
+}
